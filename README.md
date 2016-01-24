@@ -2,7 +2,7 @@
 Mganga is a simple open-source RPG set in fictional Africa.
 
 ### What does Mganga mean?
-Mganga means "thrive" in Swahili.
+Mganga means "shaman" in Swahili.
 
 # Installation
 Right now, the only way to run Mganga is to clone this repository and run it. Mganga is written in Python **3**.
