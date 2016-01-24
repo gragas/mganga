@@ -9,8 +9,8 @@ Right now, the only way to run Mganga is to clone this repository and run it. Mg
 
    1. Clone the repository: `git clone https://github.com/gragas/mganga`
    2. Install Mganga's dependencies:
-     a. [Pygame 1.9.2](http://pygame.org/) (Note that pygame 1.9.2 is not on the Python Packaging Index, and therefore compatibility with Mganga is not guaranteed if you install pygame via `pip install pygame`)
-     b. [Buffalo](http://buffalo.readthedocs.org/)
+      a. [Pygame 1.9.2](http://pygame.org/) (Note that pygame 1.9.2 is not on the Python Packaging Index, and therefore compatibility with Mganga is not guaranteed if you install pygame via `pip install pygame`)
+      b. [Buffalo](http://buffalo.readthedocs.org/)
    3. Navigate to `mganga/src` and run `python3 main.py`
 
 # Contributing
