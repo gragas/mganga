@@ -1,7 +1,9 @@
 import pygame
 
 from buffalo import utils
+from buffalo.button import Button
 from buffalo.label import Label
+from buffalo.option import Option
 from buffalo.scene import Scene
 
 class MainMenu(Scene):
@@ -11,6 +13,14 @@ class MainMenu(Scene):
             Label(
                 (5, 5),
                 "Mganga Version 0.0.1",
+            )
+        )
+        self.buttons.add(
+            Button(
+                utils.SCREEN_M,
+                "New World",
+                x_centered=True,
+                y_centered=True,
             )
         )
 
