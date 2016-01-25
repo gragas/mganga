@@ -4,8 +4,7 @@ from buffalo import utils
 
 from main_menu import MainMenu
 
-def main():
-    
+def main():    
     while not utils.end:
         utils.scene.logic()
         utils.scene.update()
@@ -13,7 +12,6 @@ def main():
         utils.delta = utils.clock.tick( utils.FRAMES_PER_SECOND )
 
 if __name__ == "__main__":
-    
     if not utils.init(
             caption="Mganga",
     ):
