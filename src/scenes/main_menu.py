@@ -11,6 +11,7 @@ from buffalo.option import Option
 from buffalo.scene import Scene
 
 import server
+from scenes.solo_game import SoloGame
 
 class MainMenu(Scene):
     def __init__(self):
@@ -23,16 +24,19 @@ class MainMenu(Scene):
             )
         )
 
+        self.port = 5000
         self.local_server = True
 
         def new_world():
             self.server = Process(target=server.app.run, args=(self.ip,))
             self.server.start()
+            utils.set_scene(SoloGame(self.server, self.ip, self.port))
 
         def stop():
-            requests.post("http://{}:5000/shutdown".format(self.ip))
-            self.server.terminate()
-            self.server.join()
+            if hasattr(self, "server"):
+                requests.post("http://{}:{}/shutdown".format(self.ip, self.port))
+                self.server.terminate()
+                self.server.join()
 
         def shutdown():
             stop()
@@ -50,7 +54,7 @@ class MainMenu(Scene):
 
         self.buttons.add(
             Button(
-                (utils.SCREEN_W // 2, utils.SCREEN_H // 2 - 100),
+                (utils.SCREEN_W // 2, utils.SCREEN_H // 2 + 100),
                 "Exit",
                 x_centered=True,
                 y_centered=True,
