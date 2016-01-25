@@ -2,7 +2,7 @@ import pygame
 
 from buffalo import utils
 
-from main_menu import MainMenu
+from scenes.main_menu import MainMenu
 
 def main():    
     while not utils.end:
