@@ -10,6 +10,7 @@ from buffalo.option import Option
 from buffalo.scene import Scene
 
 from beings.man import Man
+from beings.you import You
 
 class SoloGame(Scene):
     def __init__(self, server, ip, port):
@@ -19,9 +20,15 @@ class SoloGame(Scene):
         self.port = port
 
         self.beings = set()
+        self.you = You()
+        self.beings.add(self.you)
 
         """ Test """
         self.beings.add(Man())
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        self.you.update(keys)
 
     def blit(self):
         for b in self.beings:
