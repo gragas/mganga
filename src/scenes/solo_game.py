@@ -9,6 +9,8 @@ from buffalo.label import Label
 from buffalo.option import Option
 from buffalo.scene import Scene
 
+from beings.man import Man
+
 class SoloGame(Scene):
     def __init__(self, server, ip, port):
         Scene.__init__(self)
@@ -16,8 +18,14 @@ class SoloGame(Scene):
         self.ip = ip
         self.port = port
 
+        self.beings = set()
+
+        """ Test """
+        self.beings.add(Man())
+
     def blit(self):
-        pass
+        for b in self.beings:
+            b.blit(utils.screen)
 
     def stop(self):
         if hasattr(self, "server"):
